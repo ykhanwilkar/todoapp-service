@@ -1,22 +1,19 @@
 package io.todoapp.config;
 
-import org.springframework.context.annotation.Bean;
+import io.swagger.v3.oas.annotations.OpenAPIDefinition;
+import io.swagger.v3.oas.annotations.info.Contact;
+import io.swagger.v3.oas.annotations.info.Info;
+import io.swagger.v3.oas.annotations.servers.Server;
 import org.springframework.context.annotation.Configuration;
-import springfox.documentation.builders.PathSelectors;
-import springfox.documentation.builders.RequestHandlerSelectors;
-import springfox.documentation.spi.DocumentationType;
-import springfox.documentation.spring.web.plugins.Docket;
 
 @Configuration
+@OpenAPIDefinition(info = @Info(title = "Todo App API",
+        description = "This API is used to manage tasks in a todo app",
+        contact = @Contact(name = "Todo App", email = ""),
+        version = "v1"),
+        servers ={
+            @Server(description = "local", url = "http://localhost:9090/todo"),
+        }
+)
 public class SwaggerConfig {
-
-    @Bean
-    public Docket api() {
-        return new Docket(DocumentationType.SWAGGER_2)
-                .select()
-                .apis(RequestHandlerSelectors.any())
-                .paths(PathSelectors.any())
-                .build();
-    }
-
 }
