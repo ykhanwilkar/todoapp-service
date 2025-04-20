@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
-@RestController(value = "/task")
+@RestController("task")
 public class TaskController {
 
     private final TaskService taskService;

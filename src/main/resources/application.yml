@@ -3,4 +3,5 @@ spring:
     - name: "todoapp-service"
 
 server:
+  contextPath: "/todoapp"
   port: 9090

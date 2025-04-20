@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Configuration;
         contact = @Contact(name = "Todo App", email = ""),
         version = "v1"),
         servers ={
-            @Server(description = "local", url = "http://localhost:9090/todo"),
+            @Server(description = "local", url = "http://localhost:9090/todoapp"),
         }
 )
 public class SwaggerConfig {
